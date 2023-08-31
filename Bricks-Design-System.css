@@ -14,7 +14,7 @@
     Highlights: 347 lines & 230 CSS Variables (Design System & CSS Framework)     
    =============================================== */
    :root { 
-    /* ---------- Light Mode (Defualt Color Mode) ------------ */
+    /* ---------- Light Mode (Default Color Mode) ------------ */
      /* Note:  Feel free to change the colors' values, Do not change the colors' variable unless it is really needed.   */
      /* Brand Colors */
       --gs-accent: hsl(212.92, 80%, 71.96%);
@@ -55,7 +55,7 @@
      /* Special Colors */ 
       --gs-special-1:#01122c;     /*  Extra Color 1  */
       --gs-special-2:#e8d0bd;     /*  Extra Color 2  */
-     /* Backgounds Color & Images */
+     /* Background Color & Images */
      /* --gs-background-image: url("https://bricks-design-system.test/wp-content/uploads/2023/07/artistic-blurry-colorful-wallpaper-background-scaled.jpg");
       --gs-background-color: var(--gs-body);
 	 /* ---------- Dark Mode Colors ------------ */
@@ -341,9 +341,9 @@ body.dark-mode {   /* ----------    Dark Mode   ------------ */
     /* Backgrounds (Can Be Used For Body Background)*/
      --gs-background-color: var(--gs-background-color-dark);
 	 --gs-background-image: var(--gs-background-image-dark);
-	/* Backgrounds (Can Be Used For Body Background)*/
+       /* Backgrounds (Can Be Used For Body Background)*/
 	 background: var(--gs-body);
-     background-image: var(--gs-background-image-dark);
+         background-image: var(--gs-background-image-dark);
 }
 
 
