@@ -1,0 +1,349 @@
+/*
+ Theme Name:   Design System - Bricks Builder
+ Theme URI:    https://bricksbuilder.io/
+ Description:  Use this child theme to extend Bricks.
+ Author:       Reyad Al Faituri
+ Author URI:   https://reyadalfaituri.com
+ Template:     bricks
+ Version:      1.0.0
+ Text Domain:  bricks
+*/
+
+ /* ===============================================     
+    Update Date: 2023 - 07 - 25
+    Highlights: 347 lines & 230 CSS Variables (Design System & CSS Framework)     
+   =============================================== */
+   :root { 
+    /* ---------- Light Mode (Defualt Color Mode) ------------ */
+     /* Note:  Feel free to change the colors' values, Do not change the colors' variable unless it is really needed.   */
+     /* Brand Colors */
+      --gs-accent: hsl(212.92, 80%, 71.96%);
+      --gs-accent-darker: hsl(213, 90%, 71.96%);
+      --gs-accent-lighter: hsl(212.92, 50%, 71.96%);
+      --gs-primary: hsl(218.18, 40.93%, 54.31%);
+      --gs-primary-darker: hsl(218.18, 60.93%, 54.31%);
+      --gs-primary-lighter: hsl(218.18, 36.93%, 54.31%);
+      --gs-secondary: hsl(207.57, 82.22%, 82.35%);
+      --gs-tertiary: hsl(212.92, 79.02%, 71.96%);
+     /* Fixed Colors */
+      --gs-white: white;
+      --gs-black: black;
+     /* Nuteral (Light & Dark) Colors - */
+      --gs-light:#eeeeee;
+      --gs-dark:#010c1e;
+     /* Neutral Colors */
+      --gs-neutral-hue: 208;   /*HUE*/
+      --gs-neutral-sat: 80%;  /*saturation*/ 
+      --gs-light-1: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 94%);
+      --gs-light-2: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 90%);
+      --gs-light-3: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 86%);
+      --gs-light-4: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 77%);
+      --gs-dark-1: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 59%);
+      --gs-dark-2: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 50%);
+      --gs-dark-3: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 40%);
+      --gs-dark-4: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 30%);
+     /* Body Colors  */
+      --gs-body:#ffffff;   
+      --gs-text:#000000;
+     /* Supportive Colors */
+      --gs-info:#050505;          /*  Tooltips   */
+      --gs-mute:#969696;          /*  Disable    */
+      --gs-border:#5b6576;        /*  Border     */
+      --gs-warning:#ff7b00;       /*  Warning    */
+      --gs-danger:#ff0048;        /*  Error      */
+      --gs-success:#00bd13;       /*  Success    */
+     /* Special Colors */ 
+      --gs-special-1:#01122c;     /*  Extra Color 1  */
+      --gs-special-2:#e8d0bd;     /*  Extra Color 2  */
+     /* Backgounds Color & Images */
+     /* --gs-background-image: url("https://bricks-design-system.test/wp-content/uploads/2023/07/artistic-blurry-colorful-wallpaper-background-scaled.jpg");
+      --gs-background-color: var(--gs-body);
+	 /* ---------- Dark Mode Colors ------------ */
+     /* Brand Colors */
+      --gs-accent-dark: hsl(212.92, 80%, 71.96%); 
+      --gs-accent-darker-dark: hsl(213, 90%, 71.96%); 
+      --gs-accent-lighter-dark: hsl(212.92, 50%, 71.96%);
+      --gs-primary-dark: hsl(218.18, 40.93%, 54.31%);
+      --gs-primary-darker-dark: hsl(218.18, 60.93%, 54.31%); 
+      --gs-primary-lighter-dark: hsl(218.18, 36.93%, 54.31%); 
+      --gs-secondary-dark: hsl(207.57, 82.22%, 82.35%);  
+      --gs-tertiary-dark: hsl(212.92, 79.02%, 71.96%); 
+     /* Nuteral (Light & Dark) Colors - */
+      --gs-light-dark: #010c1e;
+      --gs-dark-dark: #eeeeee;
+     /* Fixed Colors */
+      --gs-white-dark: white;
+      --gs-black-dark: black;
+     /* Body Colors  */
+      --gs-body-dark: #010e23;
+      --gs-text-dark: white;
+     /* Supportive Colors */
+      --gs-info-dark:#4B4B4B;
+      --gs-mute-dark:#AEAEAE;
+      --gs-border-dark:#5b6576;
+      --gs-warning-dark:#ff7b00;
+      --gs-danger-dark:#ff0048;
+      --gs-success-dark:#00bd13;
+     /* Special Colors */
+      --gs-special-1-dark:#010e23;
+      --gs-special-2-dark:#1fb7aa;
+     /* Backgounds Color / Images */
+	  --gs-background-image-dark: url("https://bricks-design-system.test/wp-content/uploads/2023/07/hero-dark@90.dba36cdf-scaled.jpg"); 
+      --gs-background-color-dark: var(--gs-body-dark);
+	/*----------------------------------------------------*/	  	
+    /* == Media Query Multiplier Factors  [1] ==*/
+     --gs-spacing-multiplier: 1;                                                                 /*  Spacing Multiplier for diffrent screen sizes  */
+     --gs-font-multiplier: 1;                                                                    /*  Font Multiplier for diffrent screen sizes  */     
+    /* Alighnment [3] */
+     --gs-max-width: calc(1440px * var(--gs-spacing-multiplier));                                 /*  Max Width Alignment  */
+     --gs-header-max-width: calc(1440px * var(--gs-spacing-multiplier));                          /*  Header Max Width Alignment  */
+     --gs-footer-max-width: calc(1440px * var(--gs-spacing-multiplier));                          /*  Header Max Width Alignment  */
+
+    /* Border Radius */
+     --gs-border-radius-low: 12px;
+     --gs-border-radius-medium: 24px;
+     --gs-border-radius-high: 45px;
+
+    /* Spacing Responsive used in Padding and Margin [9] */
+     --gs-spacing-3xs: calc(1rem * var(--gs-spacing-multiplier));
+     --gs-spacing-2xs: calc(2rem * var(--gs-spacing-multiplier));
+     --gs-spacing-xs: calc(3rem * var(--gs-spacing-multiplier));
+     --gs-spacing-s: calc(4rem * var(--gs-spacing-multiplier));
+     --gs-spacing-m: calc(5rem * var(--gs-spacing-multiplier));
+     --gs-spacing-l: calc(6rem * var(--gs-spacing-multiplier));
+     --gs-spacing-xl: calc(7rem * var(--gs-spacing-multiplier));
+     --gs-spacing-2xl: calc(8rem * var(--gs-spacing-multiplier));
+     --gs-spacing-3xl: calc(10rem * var(--gs-spacing-multiplier)); 
+
+    /* Responsive Heading & Body [7] */
+     --gs-h1: calc(clamp(3rem, 2.134rem + 4.33vw, 5.6rem) * var(--gs-font-multiplier));           /*  h1   | 32px  */
+     --gs-h2: calc(clamp(2.4rem, 1.8rem + 3vw, 4.2rem) * var(--gs-font-multiplier));              /*  h2   | 24px  */
+     --gs-h3: calc(clamp(2rem, 1.6rem + 2vw, 3.2rem) * var(--gs-font-multiplier));                /*  h3   | 19px  */
+     --gs-h4: calc(clamp(1.8rem, 1.466rem + 1.67vw, 2.8rem) * var(--gs-font-multiplier));         /*  h4   | 16px  */
+     --gs-h5: calc(clamp(1.7rem, 1.466rem + 1.17vw, 2.4rem) * var(--gs-font-multiplier));         /*  h5   | 13px  */
+     --gs-h6: calc(clamp(1.5rem, 1.334rem + 0.83vw, 2rem) * var(--gs-font-multiplier));           /*  h6   | 11px  */
+     --gs-fs-body: calc(clamp(1.3rem, 1.234rem + 0.33vw, 1.5rem) * var(--gs-font-multiplier));    /*  body | 16px  */
+
+    /* Responsive font sizes [11] */
+     --gs-ts-3xs: calc(0.1rem * var(--gs-font-multiplier));                                          /* 10 */
+     --gs-ts-2xs: calc(clamp(1rem, 0.966rem + 0.17vw, 1.1rem) * var(--gs-font-multiplier));          /* 11 */
+     --gs-ts-xs: calc(clamp(1.1rem, 1.066rem + 0.17vw, 1.2rem) * var(--gs-font-multiplier));         /* 12 */
+     --gs-ts-s: calc(clamp(1.2rem, 1.134rem + 0.33vw, 1.4rem) * var(--gs-font-multiplier));          /* 14 */
+     --gs-ts-base-2: calc(clamp(1.3rem, 1.234rem + 0.33vw, 1.5rem) * var(--gs-font-multiplier));     /* 15 */
+     --gs-ts-base: calc(clamp(1.3rem, 1.2rem + 0.5vw, 1.6rem) * var(--gs-font-multiplier));          /* 16 */
+     --gs-ts-m: calc(clamp(1.7rem, 1.466rem + 1.17vw, 2.4rem) * var(--gs-font-multiplier));          /* 24 */
+     --gs-ts-l: calc(clamp(2rem, 1.6rem + 2vw, 3.2rem) * var(--gs-font-multiplier));                 /* 32 */     
+     --gs-ts-xl: calc(clamp(2.4rem, 1.8rem + 3vw, 4.2rem) * var(--gs-font-multiplier));              /* 42 */
+     --gs-ts-2xl: calc(clamp(3rem, 2.134rem + 4.33vw, 5.6rem) * var(--gs-font-multiplier));          /* 56 */
+     --gs-ts-3xl: calc(clamp(3.6rem, 2.4rem + 6vw, 7.2rem) * var(--gs-font-multiplier));             /* 72 */
+
+    /* Responsive text sizes [53] */
+     --gs-fs-8: calc(0.8rem * var(--gs-font-multiplier));                                            /*1px Incremental*/ /*11 - 10.5*/
+     --gs-fs-9: calc(0.9rem * var(--gs-font-multiplier));
+     --gs-fs-10: calc(1rem * var(--gs-font-multiplier));
+     --gs-fs-11: calc(clamp(1rem, 0.966rem + 0.17vw, 1.1rem) * var(--gs-font-multiplier));     
+     --gs-fs-12: calc(clamp(1.1rem, 1.066rem + 0.17vw, 1.2rem) * var(--gs-font-multiplier));  
+     --gs-fs-13: calc(clamp(1.1rem, 1.034rem + 0.33vw, 1.3rem) * var(--gs-font-multiplier));   
+     --gs-fs-14: calc(clamp(1.2rem, 1.134rem + 0.33vw, 1.4rem) * var(--gs-font-multiplier));   
+     --gs-fs-15: calc(clamp(1.3rem, 1.234rem + 0.33vw, 1.5rem) * var(--gs-font-multiplier));   
+     --gs-fs-16: calc(clamp(1.3rem, 1.2rem + 0.5vw, 1.6rem) * var(--gs-font-multiplier));
+     --gs-fs-17: calc(clamp(1.4rem, 1.3rem + 0.5vw, 1.7rem) * var(--gs-font-multiplier));      
+     --gs-fs-18: calc(clamp(1.4rem, 1.266rem + 0.67vw, 1.8rem) * var(--gs-font-multiplier));
+     --gs-fs-19: calc(clamp(1.5rem, 1.366rem + 0.67vw, 1.9rem) * var(--gs-font-multiplier));
+     --gs-fs-20: calc(clamp(1.5rem, 1.334rem + 0.83vw, 2rem) * var(--gs-font-multiplier));
+     --gs-fs-21: calc(clamp(1.6rem, 1.434rem + 0.83vw, 2.1rem) * var(--gs-font-multiplier));
+     --gs-fs-22: calc(clamp(1.6rem, 1.4rem + 1vw, 2.2rem) * var(--gs-font-multiplier));
+     --gs-fs-23: calc(clamp(1.6rem, 1.366rem + 1.17vw, 2.3rem) * var(--gs-font-multiplier));        
+     --gs-fs-24: calc(clamp(1.7rem, 1.466rem + 1.17vw, 2.4rem) * var(--gs-font-multiplier));
+     --gs-fs-25: calc(clamp(1.7rem, 1.434rem + 1.33vw, 2.5rem) * var(--gs-font-multiplier));        
+     --gs-fs-26: calc(clamp(1.8rem, 1.534rem + 1.33vw, 2.6rem) * var(--gs-font-multiplier));
+     --gs-fs-27: calc(clamp(1.8rem, 1.5rem + 1.5vw, 2.7rem) * var(--gs-font-multiplier));
+     --gs-fs-28: calc(clamp(1.8rem, 1.466rem + 1.67vw, 2.8rem) * var(--gs-font-multiplier));
+     --gs-fs-29: calc(clamp(1.9rem, 1.566rem + 1.67vw, 2.9rem) * var(--gs-font-multiplier));
+     --gs-fs-30: calc(clamp(1.9rem, 1.534rem + 1.83vw, 3rem) * var(--gs-font-multiplier));
+     --gs-fs-31: calc(clamp(2rem, 1.634rem + 1.83vw, 3.1rem) * var(--gs-font-multiplier));
+     --gs-fs-32: calc(clamp(2rem, 1.6rem + 2vw, 3.2rem) * var(--gs-font-multiplier));
+     --gs-fs-33: calc(clamp(2rem, 1.566rem + 2.17vw, 3.3rem) * var(--gs-font-multiplier));
+     --gs-fs-34: calc(clamp(2.1rem, 1.666rem + 2.17vw, 3.4rem) * var(--gs-font-multiplier));
+     --gs-fs-35: calc(clamp(2.1rem, 1.634rem + 2.33vw, 3.5rem) * var(--gs-font-multiplier));        
+     --gs-fs-36: calc(clamp(2.2rem, 1.734rem + 2.33vw, 3.6rem) * var(--gs-font-multiplier));
+     --gs-fs-37: calc(clamp(2.2rem, 1.7rem + 2.5vw, 3.7rem) * var(--gs-font-multiplier));
+     --gs-fs-38: calc(clamp(2.2rem, 1.666rem + 2.67vw, 3.8rem) * var(--gs-font-multiplier));
+     --gs-fs-39: calc(clamp(2.3rem, 1.766rem + 2.67vw, 3.9rem) * var(--gs-font-multiplier));
+     --gs-fs-40: calc(clamp(2.3rem, 1.734rem + 2.83vw, 4rem) * var(--gs-font-multiplier));
+     --gs-fs-41: calc(clamp(2.4rem, 1.834rem + 2.83vw, 4.1rem) * var(--gs-font-multiplier));
+     --gs-fs-42: calc(clamp(2.4rem, 1.8rem + 3vw, 4.2rem) * var(--gs-font-multiplier));
+     --gs-fs-43: calc(clamp(2.4rem, 1.766rem + 3.17vw, 4.3rem) * var(--gs-font-multiplier));        
+     --gs-fs-44: calc(clamp(2.5rem, 1.866rem + 3.17vw, 4.4rem) * var(--gs-font-multiplier));       /*2px Incremental*/
+     --gs-fs-46: calc(clamp(2.6rem, 1.934rem + 3.33vw, 4.6rem) * var(--gs-font-multiplier)); 
+     --gs-fs-48: calc(clamp(2.7rem, 2rem + 3.5vw, 4.8rem) * var(--gs-font-multiplier));
+     --gs-fs-50: calc(clamp(2.7rem, 1.934rem + 3.83vw, 5rem) * var(--gs-font-multiplier));
+     --gs-fs-52: calc(clamp(2.8rem, 2rem + 4vw, 5.2rem) * var(--gs-font-multiplier));
+     --gs-fs-54: calc(clamp(2.9rem, 2.066rem + 4.17vw, 5.4rem) * var(--gs-font-multiplier));
+     --gs-fs-56: calc(clamp(3rem, 2.134rem + 4.33vw, 5.6rem) * var(--gs-font-multiplier));
+     --gs-fs-58: calc(clamp(3rem, 2.066rem + 4.67vw, 5.8rem) * var(--gs-font-multiplier));
+     --gs-fs-60: calc(clamp(3.1rem, 2.134rem + 4.83vw, 6rem) * var(--gs-font-multiplier));        /*4px Incremental*/
+     --gs-fs-64: calc(clamp(3.3rem, 2.266rem + 5.17vw, 6.4rem) * var(--gs-font-multiplier));
+     --gs-fs-68: calc(clamp(3.5rem, 2.4rem + 5.5vw, 6.8rem) * var(--gs-font-multiplier)); 
+     --gs-fs-72: calc(clamp(3.6rem, 2.4rem + 6vw, 7.2rem) * var(--gs-font-multiplier));           /*12px Incremental*/
+     --gs-fs-84: calc(clamp(4.1rem, 2.666rem + 7.17vw, 8.4rem) * var(--gs-font-multiplier));
+     --gs-fs-96: calc(clamp(4.6rem, 2.934rem + 8.33vw, 9.6rem) * var(--gs-font-multiplier));
+     --gs-fs-100: calc(clamp(4.7rem, 2.934rem + 8.83vw, 10rem) * var(--gs-font-multiplier));      /*10px Incremental*/
+     --gs-fs-110: calc(clamp(5.1rem, 3.134rem + 9.83vw, 11rem) * var(--gs-font-multiplier));
+     --gs-fs-120: calc(clamp(5.5rem, 3.334rem + 10.83vw, 12rem) * var(--gs-font-multiplier)); 
+
+    /* Aspect Ratio [6] */
+     --ratio-square: 1;
+     --ratio-landscape: 4 / 3;
+     --ratio-portrait: 3 / 4;
+     --ratio-widescreen: 16 / 9;
+     --ratio-ultrawide: 18 / 5;
+     --ratio-golden: 1.6180 / 1;   
+
+    /* Gaps [10] */
+     --gs-gap1: calc(0.5rem * var(--gs-spacing-multiplier));
+     --gs-gap2: calc(var(--gs-gap1) + var(--gs-gap1));          /*  1 rem    = 10px   */
+     --gs-gap3: calc(var(--gs-gap2) + var(--gs-gap1));          /*  1.5 rem  = 10px   */
+     --gs-gap4: calc(var(--gs-gap3) + var(--gs-gap1));          /*  2 rem    = 10px   */
+     --gs-gap5: calc(var(--gs-gap4) + var(--gs-gap1));          /*  2.5 rem  = 10px   */
+     --gs-gap6: calc(var(--gs-gap5) + var(--gs-gap1));          /*  3 rem    = 10px   */
+     --gs-gap7: calc(var(--gs-gap6) + var(--gs-gap1));          /*  3.5 rem  = 10px   */
+     --gs-gap8: calc(var(--gs-gap7) + var(--gs-gap1));          /*  4 rem    = 10px   */
+     --gs-gap9: calc(var(--gs-gap7) + (2 * var(--gs-gap1)));      /*  5 rem    = 50px   */
+     --gs-gap10: calc(var(--gs-gap7) + (2 * var(--gs-gap1)));      /*  6 rem    = 60px   */
+
+    /* Grids [12] */
+     --gs-grid-c1: repeat(1, auto);
+     --gs-grid-c2: repeat(2, auto);
+     --gs-grid-c3: repeat(3, auto);
+     --gs-grid-c4: repeat(4, auto);
+     --gs-grid-c5: repeat(5, auto);
+     --gs-grid-c6: repeat(6, auto);
+     --gs-grid-c7: repeat(7, auto);
+     --gs-grid-c8: repeat(8, auto);
+     --gs-grid-c9: repeat(9, auto);
+     --gs-grid-c10: repeat(10, auto);
+     --gs-grid-c11: repeat(11, auto);
+     --gs-grid-c12: repeat(12, auto);
+ 
+    /* Scales (Up & Down) [15] */
+     --gs-scale-6: 0.7;
+     --gs-scale-5: 0.75;
+     --gs-scale-4: 0.8;
+     --gs-scale-3: 0.85;
+     --gs-scale-2: 0.9;
+     --gs-scale-1: 0.95;
+     --gs-scale0: 1;
+     --gs-scale1: 1.05;
+     --gs-scale2: 1.1;
+     --gs-scale3: 1.15;
+     --gs-scale4: 1.2;
+     --gs-scale5: 1.25;
+     --gs-scale6: 1.3;
+     --gs-scale7: 1.4;
+     --gs-scale8: 1.5;
+    /* Text wdith length */    
+     --text-length_l: 80ch;
+     --text-length_m: 65ch;
+     --text-length_s: 45ch;
+    /* Animations [9] */
+        /* Speed & Transitions */
+	   @media (prefers-reduced-motion: no-preference) {  /*Respecting Users’ Motion Preferences   */  
+		   body{transition: background-color 0.3s ease;}}    /*   It is mainly used for dark mode color tansitions   */
+            --gs-transition-x-fast: 0.1s;
+            --gs-transition-fast: 0.2s;
+            --gs-transition-medium: 0.3s;
+            --gs-transition-slow: 0.4s;
+            --gs-transition-x-slow: 0.5s;
+        /* Transform x & y */
+            --gs-low: calc(6px * var(--gs-spacing-multiplier));       /*calc(6px * var(--gs-spacing-multiplier))*/
+            --gs-medium: calc(10px * var(--gs-spacing-multiplier));   /*calc(10px * var(--gs-spacing-multiplier))*/
+            --gs-high: calc(14px * var(--gs-spacing-multiplier));     /*calc(14px * var(--gs-spacing-multiplier))*/
+            --gs-x-high: calc(18px * var(--gs-spacing-multiplier));   /*calc(18px * var(--gs-spacing-multiplier))*/
+	   
+    /*  ----  Media Query Responsive Sizing & Spcings    ----    */
+        @media screen and (min-width: 478px) {            /* For Mobile */ 
+            --gs-font-multiplier: 1;
+            --gs-spacing-multiplier: 1;}
+        @media screen and (min-width: 767px) {            /* For Mobile landscape */
+            --gs-font-multiplier: 1;
+            --gs-spacing-multiplier: 1;}
+        @media screen and (min-width: 971px) {            /* For Tablet */ 
+            --gs-font-multiplier: 1;
+            --gs-spacing-multiplier: 1;}
+        @media screen and (min-width: 1280px) {            /* For Big TV's (HD Screens) */ 
+            --gs-font-multiplier: 1;
+            --gs-spacing-multiplier: 1;}
+        @media screen and (min-width: 1920px) {            /* For Projectors or Higher Resolution Screens (Full HD) [2] */
+            --gs-font-multiplier: 1;
+            --gs-spacing-multiplier: 1;}
+        @media screen and (min-width: 3840px) {            /* For 4K Displays (Ultra HD) [3] */
+            --gs-font-multiplier: 1;
+            --gs-spacing-multiplier: 1;}	
+	   
+	   /*Custom CSS FOR Design System Website*/
+	   --ds-content-menu-height: 140px;
+	   --ds-main-bar-height: 45px;
+	   --ds-side-menu-width: 280px;
+	   --ds-side-menu-min-width: 60px;
+	   --ds-content-width: calc(100% - var(--ds-side-menu-width));
+	   --ds-content-padding: calc(var(--ds-main-bar-height) + var(--ds-content-menu-height));
+}
+
+body {   background-image: var(--gs-background-image);}
+body.dark-mode {   /* ----------    Dark Mode   ------------ */
+    /* Note: It is recommended not to edit the dark mode section unless it's needed. */
+    /* Brand Colors */
+     --gs-accent: var(--gs-accent-dark);
+     --gs-accent-lighter: var(--gs-accent-darker-dark);
+     --gs-accent-darker: var(--gs-accent-lighter-dark);
+     --gs-primary: var(--gs-primary-dark);
+     --gs-primary-lighter: var(--gs-primary-darker-dark);
+     --gs-primary-darker: var(--gs-primary-lighter-dark);
+     --gs-secondary: var(--gs-secondary-dark);
+     --gs-tertiary: var(--gs-tertiary-dark);
+    /* Fixed Colors */
+     --gs-white: var(--gs-white-dark);
+     --gs-black: var(--gs-black-dark);
+    /* Nuteral (Light & Dark) Colors - */
+     --gs-light: var(--gs-light-dark);
+     --gs-dark: var(--gs-dark-dark);
+     --gs-dark-1-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 94%);
+     --gs-dark-2-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 90%);
+     --gs-dark-3-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 86%);
+     --gs-dark-4-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 77%);
+     --gs-light-1-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 59%);
+     --gs-light-2-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 50%);
+     --gs-light-3-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 40%);
+     --gs-light-4-dark: hsl(var(--gs-neutral-hue), var(--gs-neutral-sat), 30%);
+    /* Nuteral (Light & Dark) Colors - */
+     --gs-light-1: var(--gs-light-1-dark);
+     --gs-light-2: var(--gs-light-2-dark);
+     --gs-light-3: var(--gs-light-3-dark);
+     --gs-light-4: var(--gs-light-4-dark);
+     --gs-dark-1: var(--gs-dark-1-dark);
+     --gs-dark-2: var(--gs-dark-2-dark);
+     --gs-dark-3: var(--gs-dark-3-dark);
+     --gs-dark-4: var(--gs-dark-4-dark);
+    /* Body Colors  */
+     --gs-body: var(--gs-body-dark);
+     --gs-text:var(--gs-text-dark);
+    /* Supportive Colors */
+     --gs-mute: var(--gs-mute-dark);
+     --gs-info: var(--gs-info-dark);
+     --gs-border: var(--gs-border-dark);
+     --gs-warning: var(--gs-warning-dark);
+     --gs-danger: var(--gs-danger-dark);
+     --gs-success: var(--gs-success-dark);
+    /* Special Colors */
+     --gs-special-1: var(--gs-special-1-dark);
+     --gs-special-2: var(--gs-special-2-dark);
+    /* Backgrounds (Can Be Used For Body Background)*/
+     --gs-background-color: var(--gs-background-color-dark);
+	 --gs-background-image: var(--gs-background-image-dark);
+	/* Backgrounds (Can Be Used For Body Background)*/
+	 background: var(--gs-body);
+     background-image: var(--gs-background-image-dark);
+}
+
+
